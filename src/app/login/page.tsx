@@ -4,24 +4,23 @@ import LoginForm from "./login-form";
 export const metadata: Metadata = {
   title: "Login",
   description:
-    "Sign in to DBGFoodBoxNG, delicious Nigerian meals delivered fresh to your doorstep.",
+    "Sign in to DBGFoodBoxNG, fresh Nigerian meal boxes delivered hot across Lagos.",
 };
 
 export default function LoginPage() {
   return (
-    <main className="relative flex min-h-svh w-full items-center justify-center overflow-hidden bg-white px-6 py-12 sm:px-12 dark:bg-zinc-950">
-      {/* Decorative glows */}
+    <main className="relative flex min-h-svh w-full items-center justify-center overflow-hidden bg-white px-6 py-12 sm:px-12">
       <div
         aria-hidden="true"
-        className="animate-float absolute -top-32 -left-32 size-96 rounded-full bg-brand-300/25 blur-3xl"
+        className="pointer-events-none absolute -top-40 -left-40 size-[28rem] rounded-full bg-cream-300/50 blur-3xl"
       />
       <div
         aria-hidden="true"
-        className="absolute -right-32 -bottom-32 size-96 rounded-full bg-pepper-400/15 blur-3xl"
+        className="pointer-events-none absolute -bottom-40 -right-40 size-[28rem] rounded-full bg-coral-100/60 blur-3xl"
       />
       <div
         aria-hidden="true"
-        className="absolute inset-0 [background-image:radial-gradient(rgba(5,150,105,0.05)_1px,transparent_1px)] [background-size:22px_22px] dark:[background-image:radial-gradient(rgba(255,255,255,0.05)_1px,transparent_1px)]"
+        className="pointer-events-none absolute inset-0 [background-image:radial-gradient(rgba(68,36,39,0.05)_1px,transparent_1px)] [background-size:22px_22px]"
       />
 
       <LoginForm />

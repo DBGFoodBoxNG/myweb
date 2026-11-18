@@ -3,12 +3,89 @@ import Link from "next/link";
 import Logo from "@/components/logo";
 
 export const metadata: Metadata = {
-  title: "DBGFoodBoxNG - Naija flavors, boxed with love",
+  title: "DBGFoodBoxNG - Fresh meals, beautifully boxed",
   description:
-    "Order from top local kitchens. Cooked fresh, delivered hot in 30 minutes across Lagos.",
+    "Fresh Nigerian meal boxes, cooked to order and delivered hot across Lagos.",
 };
 
 /* ---------- Icons ---------- */
+
+function ArrowIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M4 12h16m0 0-6-6m6 6-6 6" />
+    </svg>
+  );
+}
+
+function JollofIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 64 64"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M8 37h48a24 24 0 0 1-48 0Z" />
+      <path d="M17 37a15 15 0 0 1 30 0" />
+      <path d="M23 24c0-3 2-3 2-6M32 20c0-3 2-3 2-6M41 24c0-3 2-3 2-6" />
+      <path d="M14 52h36" />
+    </svg>
+  );
+}
+
+function WrapIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 64 64"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <g transform="rotate(16 32 32)">
+        <rect x="22" y="8" width="20" height="48" rx="10" />
+        <path d="M25 20h14M24 32h16M25 44h14" />
+      </g>
+    </svg>
+  );
+}
+
+function SoupIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 64 64"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M8 36h48a24 24 0 0 1-48 0Z" />
+      <path d="M15 36c4-4 8-4 12 0s8 4 12 0 8-4 10 0" />
+      <path d="M26 21c0-3 2-3 2-6M38 22c0-3 2-3 2-6" />
+      <path d="M14 52h36" />
+    </svg>
+  );
+}
 
 function BoxIcon({ className = "" }: { className?: string }) {
   return (
@@ -22,9 +99,28 @@ function BoxIcon({ className = "" }: { className?: string }) {
       className={className}
       aria-hidden="true"
     >
-      <path d="M3.5 5.5h17l-1 3h-15l-1-3Z" />
-      <path d="M4.5 8.5h15l-1.2 10a2 2 0 0 1-2 1.7H7.7a2 2 0 0 1-2-1.7l-1.2-10Z" />
-      <path d="M12 8.5V20" />
+      <path d="M3.5 6h17l-1 3h-15l-1-3Z" />
+      <path d="M4.5 9h15l-1.2 10a2 2 0 0 1-2 1.8H7.7a2 2 0 0 1-2-1.8L4.5 9Z" />
+      <path d="M12 9v11.8" />
+    </svg>
+  );
+}
+
+function PotIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M5 9.5h14V15a4.5 4.5 0 0 1-4.5 4.5h-5A4.5 4.5 0 0 1 5 15V9.5Z" />
+      <path d="M3 11.5h2M19 11.5h2" />
+      <path d="M9.5 6.5c0-1.2 1-1.2 1-2.4M13.5 6.5c0-1.2 1-1.2 1-2.4" />
     </svg>
   );
 }
@@ -50,116 +146,92 @@ function BikeIcon({ className = "" }: { className?: string }) {
   );
 }
 
-function GridIcon({ className = "" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.6"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-      aria-hidden="true"
-    >
-      <rect x="3.5" y="3.5" width="7" height="7" rx="2" />
-      <rect x="13.5" y="3.5" width="7" height="7" rx="2" />
-      <rect x="3.5" y="13.5" width="7" height="7" rx="2" />
-      <rect x="13.5" y="13.5" width="7" height="7" rx="2" />
-    </svg>
-  );
-}
+/* ---------- Hero art ---------- */
 
-function PotIcon({ className = "" }: { className?: string }) {
+function MealBoxArt({ className = "" }: { className?: string }) {
   return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.6"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-      aria-hidden="true"
-    >
-      <path d="M5 9.5h14V15a4.5 4.5 0 0 1-4.5 4.5h-5A4.5 4.5 0 0 1 5 15V9.5Z" />
-      <path d="M3 11.5h2M19 11.5h2" />
-      <path d="M9.5 6.5c0-1.2 1-1.2 1-2.4M13.5 6.5c0-1.2 1-1.2 1-2.4" />
-    </svg>
-  );
-}
+    <svg viewBox="0 0 360 360" className={className} aria-hidden="true">
+      <defs>
+        <linearGradient id="rice" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="#ef552b" />
+          <stop offset="100%" stopColor="#c0391f" />
+        </linearGradient>
+        <linearGradient id="box" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#fff1da" />
+          <stop offset="100%" stopColor="#ffd89e" />
+        </linearGradient>
+      </defs>
 
-function ArrowRightIcon({ className = "" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-      aria-hidden="true"
-    >
-      <path d="M4 12h16m0 0-6-6m6 6-6 6" />
-    </svg>
-  );
-}
+      <circle cx="180" cy="184" r="150" fill="#fff1da" opacity="0.7" />
+      <circle cx="180" cy="184" r="130" fill="#fffaf3" stroke="#ead6d3" strokeWidth="2" />
+      <circle cx="180" cy="184" r="114" fill="#f5ece4" />
 
-function JollofIcon({ className = "" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.4"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-      aria-hidden="true"
-    >
-      <path d="M4 13.5h16a8 8 0 0 1-16 0Z" />
-      <path d="M7.5 13.5a4.5 4.5 0 0 1 9 0" />
-      <path d="M9 7.5c0-1.2 1-1.2 1-2.4M12.5 7c0-1.2 1-1.2 1-2.4M16 7.5c0-1.2 1-1.2 1-2.4" />
-    </svg>
-  );
-}
+      <path
+        d="M138 78c-9-12 9-18 0-30M180 70c-9-12 9-18 0-30M222 78c-9-12 9-18 0-30"
+        stroke="#442427"
+        strokeOpacity="0.3"
+        strokeWidth="3"
+        strokeLinecap="round"
+        fill="none"
+      />
 
-function WrapIcon({ className = "" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.4"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-      aria-hidden="true"
-    >
-      <g transform="rotate(14 12 12)">
-        <rect x="8.5" y="3" width="7" height="18" rx="3.5" />
-        <path d="M9.8 8h4.4M9.5 12h5M9.8 16h4.4" />
+      <path d="M96 200a84 84 0 0 1 168 0Z" fill="url(#rice)" />
+      <path d="M112 200a68 68 0 0 1 136 0Z" fill="#e04a2d" opacity="0.65" />
+      {[
+        [130, 178],
+        [152, 166],
+        [176, 160],
+        [200, 164],
+        [222, 176],
+        [140, 192],
+        [164, 184],
+        [188, 182],
+        [212, 192],
+      ].map(([x, y], i) => (
+        <path
+          key={i}
+          d={`M${x} ${y}l7-3`}
+          stroke="#fff1da"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          opacity="0.75"
+        />
+      ))}
+
+      <g transform="rotate(-18 148 172)">
+        <ellipse cx="148" cy="172" rx="27" ry="17" fill="#ffd89e" stroke="#c0391f" strokeWidth="2" />
+        <ellipse cx="148" cy="172" rx="17" ry="9" fill="#f5ece4" opacity="0.6" />
+        <path d="M171 172l16 5" stroke="#fffaf3" strokeWidth="5" strokeLinecap="round" />
+        <circle cx="189" cy="178" r="5" fill="#fffaf3" />
       </g>
-    </svg>
-  );
-}
 
-function SoupIcon({ className = "" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.4"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-      aria-hidden="true"
-    >
-      <path d="M4 14h16a8 8 0 0 1-16 0Z" />
-      <path d="M7 14c1.4-1.4 2.8-1.4 4.2 0s2.8 1.4 4.2 0 2.8-1.4 3.6 0" />
-      <path d="M10 8c0-1.2 1-1.2 1-2.4M14 8.5c0-1.2 1-1.2 1-2.4" />
+      <g transform="rotate(14 224 184)">
+        <ellipse cx="224" cy="184" rx="24" ry="13" fill="#ffd89e" stroke="#c0391f" strokeWidth="2" />
+        <path d="M208 184h32" stroke="#e04a2d" strokeWidth="2" opacity="0.6" />
+      </g>
+      <g transform="rotate(-8 232 206)">
+        <ellipse cx="232" cy="206" rx="22" ry="12" fill="#ffd89e" stroke="#c0391f" strokeWidth="2" />
+        <path d="M217 206h30" stroke="#e04a2d" strokeWidth="2" opacity="0.6" />
+      </g>
+
+      <path
+        d="M104 208c14-10 26-10 38 2-14 10-26 10-38-2Zm152 0c-14-10-26-10-38 2 14 10 26 10 38-2Z"
+        fill="#96e4dd"
+      />
+      <path
+        d="M120 224c10-6 18-6 26 2-10 6-18 6-26-2Zm120 0c-10-6-18-6-26 2 10 6 18 6 26-2Z"
+        fill="#442427"
+        opacity="0.15"
+      />
+
+      <path
+        d="M84 246h192l-8 26a10 10 0 0 1-9.7 7.5H101.7A10 10 0 0 1 92 272l-8-26Z"
+        fill="url(#box)"
+        stroke="#442427"
+        strokeOpacity="0.18"
+      />
+      <path d="M84 246h192l-4 13H88l-4-13Z" fill="#442427" opacity="0.12" />
+      <path d="M174 246h12l2 33.5h-16L174 246Z" fill="#442427" opacity="0.7" />
     </svg>
   );
 }
@@ -172,34 +244,13 @@ const stats = [
   { value: "4.9", label: "Customer rating" },
 ];
 
-const steps = [
-  {
-    icon: GridIcon,
-    title: "Pick your box",
-    text: "Choose a dish from our partner kitchens.",
-    step: "Step 01",
-  },
-  {
-    icon: PotIcon,
-    title: "We cook fresh",
-    text: "Every meal is prepared on order.",
-    step: "Step 02",
-  },
-  {
-    icon: BikeIcon,
-    title: "Delivered hot",
-    text: "At your door in about 30 minutes.",
-    step: "Step 03",
-  },
-];
-
 const dishes = [
   {
     icon: JollofIcon,
     name: "Jollof Rice & Chicken",
     note: "Smoky party jollof with grilled chicken.",
     price: "₦4,500",
-    badge: "Popular",
+    badge: "Bestseller",
   },
   {
     icon: WrapIcon,
@@ -211,102 +262,138 @@ const dishes = [
   {
     icon: SoupIcon,
     name: "Pepper Soup",
-    note: "Fiery broth with assorted meat.",
+    note: "A fiery, comforting broth with assorted meat.",
     price: "₦3,800",
-    badge: "Spicy",
+    badge: "Chef's pick",
   },
 ];
 
-const avatars = ["AO", "TK", "IM", "BE"];
+const steps = [
+  {
+    icon: BoxIcon,
+    title: "Pick your box",
+    text: "Choose a dish from our partner kitchens.",
+  },
+  {
+    icon: PotIcon,
+    title: "We cook fresh",
+    text: "Every meal is prepared to order.",
+  },
+  {
+    icon: BikeIcon,
+    title: "Delivered hot",
+    text: "At your door in about 30 minutes.",
+  },
+];
+
+const reviews = [
+  {
+    quote: "The jollof tastes like home. Arrived hot and beautifully packed.",
+    name: "Ada O.",
+    initials: "AO",
+  },
+  {
+    quote: "Reliable, quick, and the portions are generous. My go-to in Lagos.",
+    name: "Tunde K.",
+    initials: "TK",
+  },
+  {
+    quote: "The pepper soup is exactly what I needed on a rainy evening.",
+    name: "Imma B.",
+    initials: "IB",
+  },
+];
 
 /* ---------- Page ---------- */
 
 export default function Home() {
   return (
     <div className="flex min-h-svh flex-col bg-white">
-      {/* ---------- Header ---------- */}
-      <header className="sticky top-0 z-50 border-b border-zinc-100/80 bg-white/80 backdrop-blur-md">
-        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
+      {/* Header */}
+      <header className="sticky top-0 z-50 border-b border-plum-100/80 bg-white/90 shadow-sm backdrop-blur-md">
+        <div className="mx-auto flex h-18 max-w-6xl items-center justify-between px-6">
           <Link href="/" aria-label="DBGFoodBoxNG home">
             <Logo />
           </Link>
 
-          <nav
-            aria-label="Main"
-            className="hidden items-center gap-8 md:flex"
-          >
-            <a
-              href="#how-it-works"
-              className="text-sm font-medium text-zinc-600 transition hover:text-zinc-900"
-            >
-              How it works
-            </a>
-            <a
-              href="#menu"
-              className="text-sm font-medium text-zinc-600 transition hover:text-zinc-900"
-            >
-              Menu
-            </a>
+          <nav aria-label="Main" className="hidden items-center gap-9 md:flex">
+            {[
+              ["How it works", "#how-it-works"],
+              ["Menu", "#menu"],
+              ["Reviews", "#reviews"],
+            ].map(([label, href]) => (
+              <a
+                key={href}
+                href={href}
+                className="text-[0.95rem] font-medium text-plum-800 transition hover:text-coral-700"
+              >
+                {label}
+              </a>
+            ))}
           </nav>
 
           <Link
             href="/login"
-            className="rounded-xl bg-gradient-to-r from-brand-600 to-brand-500 px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-brand-600/20 transition hover:from-brand-700 hover:to-brand-600 hover:shadow-brand-600/30 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600"
+            className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-plum-900 to-coral-700 px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.12em] text-white shadow-md shadow-plum-900/20 transition hover:from-plum-950 hover:to-coral-800 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-coral-600"
           >
-            Sign in
+            Order now
+            <ArrowIcon className="size-3.5 transition-transform group-hover:translate-x-0.5" />
           </Link>
         </div>
       </header>
 
       <main className="flex-1">
-        {/* ---------- Hero ---------- */}
-        <section className="relative overflow-hidden">
+        {/* Hero */}
+        <section className="relative overflow-hidden bg-gradient-to-b from-cream-300 via-cream-100 to-white">
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -top-48 right-0 size-[34rem] rounded-full bg-brand-100/60 blur-3xl"
+            className="pointer-events-none absolute -right-32 -top-32 size-96 rounded-full bg-cream-200/70 blur-3xl"
           />
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -bottom-32 -left-24 size-80 rounded-full bg-pepper-400/10 blur-3xl"
+            className="pointer-events-none absolute -bottom-40 -left-32 size-96 rounded-full bg-mint-100/60 blur-3xl"
           />
 
-          <div className="relative mx-auto grid max-w-6xl items-center gap-16 px-6 pb-20 pt-14 lg:grid-cols-2 lg:gap-10 lg:pb-28 lg:pt-24">
-            {/* Copy */}
+          <div className="relative mx-auto grid max-w-6xl items-center gap-14 px-6 pb-20 pt-16 lg:grid-cols-2 lg:gap-12 lg:pb-28 lg:pt-24">
             <div className="max-w-xl">
+              <div className="flex animate-fade-up items-center gap-3">
+                <span className="h-px w-8 bg-coral-500" />
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-coral-700">
+                  Fresh from Lagos kitchens
+                </p>
+              </div>
+
               <h1
-                className="animate-fade-up text-4xl font-bold tracking-tight text-zinc-900 sm:text-5xl lg:text-6xl"
-                style={{ animationDelay: "0ms" }}
+                className="mt-6 animate-fade-up font-heading text-5xl font-bold leading-[1.08] tracking-tight text-plum-900 sm:text-6xl lg:text-7xl"
+                style={{ animationDelay: "60ms" }}
               >
-                Naija flavors,{" "}
-                <span className="bg-gradient-to-r from-brand-600 to-pepper-500 bg-clip-text text-transparent">
-                  boxed with love.
-                </span>
+                Fresh meals,{" "}
+                <em className="font-normal text-coral-700">beautifully boxed.</em>
               </h1>
 
               <p
-                className="mt-5 max-w-md animate-fade-up text-base leading-7 text-zinc-600 sm:text-lg"
+                className="mt-6 max-w-md animate-fade-up text-base leading-7 text-plum-700"
                 style={{ animationDelay: "120ms" }}
               >
-                Order from top local kitchens. Cooked fresh, delivered hot in
-                30 minutes.
+                Cooked to order. Delivered hot, right on time.
               </p>
 
               <div
-                className="mt-8 flex animate-fade-up flex-wrap items-center gap-3"
+                className="mt-9 flex animate-fade-up flex-wrap items-center gap-3"
                 style={{ animationDelay: "180ms" }}
               >
                 <Link
                   href="/login"
-                  className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-brand-600 to-brand-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-brand-600/25 transition hover:from-brand-700 hover:to-brand-600 hover:shadow-brand-600/35 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600"
+                  className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-plum-900 to-coral-700 px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-plum-900/20 transition hover:from-plum-950 hover:to-coral-800 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-coral-600"
                 >
-                  Order now
-                  <ArrowRightIcon className="size-4 transition-transform group-hover:translate-x-0.5" />
+                  Order a box
+                  <ArrowIcon className="size-4 transition-transform group-hover:translate-x-0.5" />
                 </Link>
                 <a
                   href="#menu"
-                  className="inline-flex items-center rounded-xl border border-zinc-200 bg-white px-6 py-3 text-sm font-semibold text-zinc-700 shadow-sm transition hover:border-zinc-300 hover:bg-zinc-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600"
+                  className="inline-flex items-center rounded-full border border-plum-200 bg-white/70 px-7 py-3.5 text-sm font-semibold text-plum-800 shadow-sm backdrop-blur transition hover:border-plum-300 hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-coral-600"
                 >
-                  See the menu
+                  Explore the menu
                 </a>
               </div>
 
@@ -315,133 +402,85 @@ export default function Home() {
                 style={{ animationDelay: "240ms" }}
               >
                 <div className="flex -space-x-2">
-                  {avatars.map((initials, i) => (
+                  {["AO", "TK", "IM", "BE"].map((initials, i) => (
                     <span
                       key={initials}
-                      className={`grid size-9 place-items-center rounded-full bg-gradient-to-br text-[0.6rem] font-bold text-white ring-2 ring-white ${
-                        i % 2 === 0
-                          ? "from-brand-400 to-brand-600"
-                          : "from-pepper-400 to-pepper-600"
+                      className={`grid size-9 place-items-center rounded-full text-[0.6rem] font-bold text-white ring-2 ring-cream-100 ${
+                        i % 2 === 0 ? "bg-plum-800" : "bg-coral-600"
                       }`}
                     >
                       {initials}
                     </span>
                   ))}
                 </div>
-                <p className="text-sm text-zinc-500">
-                  <span className="font-semibold text-zinc-900">50k+</span>{" "}
-                  happy customers
+                <p className="text-sm text-plum-700">
+                  <span className="font-bold text-plum-900">50,000+</span> happy
+                  food lovers
                 </p>
               </div>
             </div>
 
-            {/* Visual */}
+            {/* Hero visual */}
             <div
               className="relative mx-auto w-full max-w-md animate-fade-up lg:max-w-none"
               style={{ animationDelay: "100ms" }}
             >
               <div
                 aria-hidden="true"
-                className="absolute inset-6 rounded-[2.5rem] bg-gradient-to-br from-brand-100 via-brand-50 to-pepper-400/20 blur-2xl"
+                className="absolute inset-8 rounded-full bg-gradient-to-br from-cream-200 via-cream-100 to-mint-100 blur-2xl"
               />
-
-              {/* Order card */}
-              <div className="relative rounded-3xl border border-zinc-100 bg-white p-6 shadow-2xl shadow-brand-950/10 ring-1 ring-zinc-950/5 sm:p-7">
-                <div className="flex items-start justify-between gap-4">
-                  <div className="flex items-center gap-3">
-                    <span className="grid size-11 place-items-center rounded-2xl bg-brand-50 text-brand-600">
-                      <BoxIcon className="size-5.5" />
-                    </span>
-                    <div>
-                      <p className="text-sm font-semibold text-zinc-900">
-                        Order #2841
-                      </p>
-                      <p className="text-xs text-zinc-500">
-                        Jollof Rice &amp; Chicken
-                      </p>
-                    </div>
+              <div className="relative rounded-[2rem] border border-plum-100 bg-white/70 p-5 shadow-2xl shadow-plum-900/10 backdrop-blur sm:p-7">
+                <MealBoxArt className="mx-auto w-full max-w-sm" />
+                <div className="mt-3 flex items-center justify-between gap-4 border-t border-plum-100 pt-5">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-coral-700">
+                      Today's box
+                    </p>
+                    <p className="mt-1 font-heading text-lg font-bold text-plum-900">
+                      Jollof &amp; grilled chicken
+                    </p>
                   </div>
-                  <span className="shrink-0 rounded-full bg-brand-50 px-2.5 py-1 text-xs font-semibold text-brand-700">
-                    On the way
-                  </span>
-                </div>
-
-                <div className="mt-7 flex items-start gap-2">
-                  {["Confirmed", "Cooking", "On the way", "Delivered"].map(
-                    (step, i) => (
-                      <div key={step} className="flex-1">
-                        <div
-                          className={`h-1.5 rounded-full ${
-                            i < 3 ? "bg-brand-500" : "bg-zinc-100"
-                          }`}
-                        />
-                        <p
-                          className={`mt-2 text-[0.65rem] font-medium ${
-                            i < 3 ? "text-zinc-700" : "text-zinc-400"
-                          }`}
-                        >
-                          {step}
-                        </p>
-                      </div>
-                    ),
-                  )}
-                </div>
-
-                <div className="mt-7 flex items-center justify-between rounded-2xl bg-zinc-50 p-4">
-                  <div className="flex items-center gap-3">
-                    <span className="grid size-9 place-items-center rounded-full bg-white text-brand-600 shadow-sm">
-                      <BikeIcon className="size-4.5" />
-                    </span>
-                    <div>
-                      <p className="text-sm font-semibold text-zinc-900">
-                        Arriving in 12 min
-                      </p>
-                      <p className="text-xs text-zinc-500">
-                        Emeka is on his way
-                      </p>
-                    </div>
-                  </div>
-                  <span className="text-xs font-semibold text-brand-600">
-                    2.4 km
-                  </span>
+                  <p className="shrink-0 font-heading text-xl font-bold text-plum-900">
+                    ₦4,500
+                  </p>
                 </div>
               </div>
 
-              {/* Floating chips */}
-              <div className="animate-float absolute -top-4 right-0 rounded-2xl border border-zinc-100 bg-white px-4 py-3 shadow-lg sm:-right-4">
-                <p className="text-[0.65rem] font-medium uppercase tracking-wider text-zinc-400">
-                  Order rating
+              <div className="animate-float absolute -right-2 -top-4 rounded-2xl border border-plum-100 bg-white px-4 py-3 shadow-lg sm:-right-5">
+                <p className="text-[0.65rem] font-semibold uppercase tracking-widest text-plum-500">
+                  Customer rating
                 </p>
-                <p className="mt-0.5 text-sm font-bold text-zinc-900">
+                <p className="mt-1 text-sm font-bold text-plum-900">
                   4.9{" "}
-                  <span className="text-pepper-500">★★★★★</span>
+                  <span aria-hidden="true" className="text-coral-500">
+                    ★★★★★
+                  </span>
+                  <span className="sr-only">out of 5 stars</span>
                 </p>
               </div>
 
-              <div className="absolute -bottom-5 left-0 flex items-center gap-3 rounded-2xl border border-zinc-100 bg-white px-4 py-3 shadow-lg sm:-left-4">
-                <span className="grid size-9 place-items-center rounded-full bg-gradient-to-br from-pepper-400 to-pepper-600 text-[0.6rem] font-bold text-white">
-                  JR
+              <div className="absolute -bottom-5 -left-2 flex items-center gap-3 rounded-2xl border border-plum-100 bg-white px-4 py-3 shadow-lg sm:-left-5">
+                <span className="grid size-9 place-items-center rounded-full bg-mint-100 text-plum-900">
+                  <BikeIcon className="size-4.5" />
                 </span>
                 <div>
-                  <p className="text-xs font-semibold text-zinc-900">
-                    Jollof Rice
-                  </p>
-                  <p className="text-xs text-zinc-500">₦4,500</p>
+                  <p className="text-xs font-bold text-plum-900">Delivered hot</p>
+                  <p className="text-xs text-plum-600">In about 28 min</p>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* ---------- Stats ---------- */}
-        <section className="border-y border-zinc-100 bg-zinc-50/60">
-          <dl className="mx-auto grid max-w-6xl grid-cols-3 divide-x divide-zinc-200 px-6 py-10">
+        {/* Stats */}
+        <section className="border-y border-plum-100 bg-white">
+          <dl className="mx-auto grid max-w-6xl grid-cols-3 divide-x divide-plum-100 px-6 py-10">
             {stats.map(({ value, label }) => (
-              <div key={label} className="px-2 text-center sm:px-6">
-                <dd className="text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl">
+              <div key={label} className="px-1 text-center sm:px-6">
+                <dd className="font-heading text-2xl font-bold text-plum-900 sm:text-3xl">
                   {value}
                 </dd>
-                <dt className="mt-1 text-[0.65rem] font-medium uppercase tracking-wider text-zinc-500 sm:text-xs">
+                <dt className="mt-1 text-[0.65rem] font-semibold uppercase tracking-widest text-plum-500 sm:text-xs">
                   {label}
                 </dt>
               </div>
@@ -449,60 +488,20 @@ export default function Home() {
           </dl>
         </section>
 
-        {/* ---------- How it works ---------- */}
-        <section
-          id="how-it-works"
-          className="mx-auto max-w-6xl scroll-mt-24 px-6 py-20 lg:py-28"
-        >
-          <div className="max-w-xl">
-            <p className="text-xs font-semibold uppercase tracking-widest text-brand-600">
-              How it works
-            </p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">
-              Three steps to a great meal.
-            </h2>
-          </div>
-
-          <div className="mt-12 grid gap-5 sm:grid-cols-3">
-            {steps.map(({ icon: Icon, title, text, step }) => (
-              <div
-                key={title}
-                className="group rounded-3xl border border-zinc-100 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-zinc-200 hover:shadow-lg"
-              >
-                <span className="grid size-11 place-items-center rounded-2xl bg-brand-50 text-brand-600 transition group-hover:bg-brand-600 group-hover:text-white">
-                  <Icon className="size-5" />
-                </span>
-                <h3 className="mt-5 text-base font-semibold text-zinc-900">
-                  {title}
-                </h3>
-                <p className="mt-1.5 text-sm leading-6 text-zinc-500">
-                  {text}
-                </p>
-                <p className="mt-5 text-[0.65rem] font-semibold uppercase tracking-widest text-brand-600/70">
-                  {step}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* ---------- Menu ---------- */}
-        <section
-          id="menu"
-          className="scroll-mt-24 border-t border-zinc-100 bg-zinc-50/60"
-        >
+        {/* Menu */}
+        <section id="menu" className="scroll-mt-24 bg-cream-50">
           <div className="mx-auto max-w-6xl px-6 py-20 lg:py-28">
-            <div className="flex flex-wrap items-end justify-between gap-4">
+            <div className="flex flex-wrap items-end justify-between gap-5">
               <div className="max-w-xl">
-                <p className="text-xs font-semibold uppercase tracking-widest text-brand-600">
-                  Menu
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-coral-700">
+                  Our top selections
                 </p>
-                <h2 className="mt-3 text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">
-                  Popular right now.
+                <h2 className="mt-4 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl lg:text-5xl">
+                  A taste of what's in the box.
                 </h2>
               </div>
-              <p className="text-sm text-zinc-500">
-                Fresh picks from partner kitchens.
+              <p className="max-w-xs text-sm leading-6 text-plum-600">
+                Fresh picks from kitchens we love.
               </p>
             </div>
 
@@ -510,24 +509,24 @@ export default function Home() {
               {dishes.map(({ icon: Icon, name, note, price, badge }) => (
                 <article
                   key={name}
-                  className="group overflow-hidden rounded-3xl border border-zinc-100 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                  className="group overflow-hidden rounded-2xl border border-plum-100 border-b-4 border-b-coral-300 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:border-b-coral-500 hover:shadow-xl"
                 >
-                  <div className="relative flex h-44 items-center justify-center bg-gradient-to-br from-brand-50 to-brand-100/70">
-                    <Icon className="size-16 text-brand-600/70 transition group-hover:scale-105" />
-                    <span className="absolute left-4 top-4 rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-brand-700 backdrop-blur">
+                  <div className="relative flex h-48 items-center justify-center bg-gradient-to-br from-cream-100 to-cream-200">
+                    <Icon className="size-20 text-plum-800/80 transition duration-300 group-hover:scale-105 group-hover:text-coral-700" />
+                    <span className="absolute left-4 top-4 rounded-full bg-white/85 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-widest text-plum-800 shadow-sm backdrop-blur">
                       {badge}
                     </span>
                   </div>
-                  <div className="flex items-start justify-between gap-4 p-5">
-                    <div>
-                      <h3 className="text-base font-semibold text-zinc-900">
+                  <div className="p-5">
+                    <div className="flex items-start justify-between gap-3">
+                      <h3 className="font-heading text-xl font-bold leading-tight text-plum-900">
                         {name}
                       </h3>
-                      <p className="mt-1 text-sm text-zinc-500">{note}</p>
+                      <p className="shrink-0 text-sm font-bold text-coral-700">
+                        {price}
+                      </p>
                     </div>
-                    <p className="shrink-0 text-sm font-bold text-zinc-900">
-                      {price}
-                    </p>
+                    <p className="mt-2 text-sm leading-6 text-plum-600">{note}</p>
                   </div>
                 </article>
               ))}
@@ -535,41 +534,170 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ---------- CTA ---------- */}
-        <section className="mx-auto max-w-6xl px-6 pb-20 pt-16 lg:pb-28">
-          <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-brand-700 via-brand-600 to-brand-500 px-8 py-16 text-center shadow-xl shadow-brand-900/20 sm:px-16">
+        {/* How it works */}
+        <section id="how-it-works" className="scroll-mt-24 bg-white">
+          <div className="mx-auto max-w-6xl px-6 py-20 lg:py-28">
+            <div className="max-w-xl">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-coral-700">
+                How to order
+              </p>
+              <h2 className="mt-4 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl lg:text-5xl">
+                Three simple steps.
+              </h2>
+            </div>
+
+            <div className="mt-12 grid gap-8 md:grid-cols-3">
+              {steps.map(({ icon: Icon, title, text }, i) => (
+                <div key={title} className="group relative pl-1">
+                  <div className="flex items-center gap-4">
+                    <span className="grid size-12 place-items-center rounded-full border border-plum-200 bg-cream-50 text-plum-800 transition group-hover:border-coral-400 group-hover:bg-coral-50 group-hover:text-coral-700">
+                      <Icon className="size-5" />
+                    </span>
+                    <span className="font-heading text-4xl font-bold text-plum-500">
+                      0{i + 1}
+                    </span>
+                  </div>
+                  <h3 className="mt-5 font-heading text-xl font-bold text-plum-900">
+                    {title}
+                  </h3>
+                  <p className="mt-2 max-w-xs text-sm leading-6 text-plum-600">
+                    {text}
+                  </p>
+                  {i < steps.length - 1 && (
+                    <span
+                      aria-hidden="true"
+                      className="absolute -right-4 top-6 hidden h-px w-8 bg-plum-200 md:block"
+                    />
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Reviews */}
+        <section id="reviews" className="scroll-mt-24 bg-cream-50">
+          <div className="mx-auto max-w-6xl px-6 py-20 lg:py-28">
+            <div className="max-w-xl">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-coral-700">
+                Reviews
+              </p>
+              <h2 className="mt-4 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl lg:text-5xl">
+                Loved across Lagos.
+              </h2>
+            </div>
+
+            <div className="mt-12 grid gap-6 md:grid-cols-3">
+              {reviews.map(({ quote, name, initials }) => (
+                <figure
+                  key={name}
+                  className="flex h-full flex-col rounded-2xl border border-plum-100 bg-white p-6 shadow-sm"
+                >
+                  <p className="text-sm font-semibold tracking-widest text-coral-500">
+                    <span aria-hidden="true">★★★★★</span>
+                    <span className="sr-only">5 out of 5 stars</span>
+                  </p>
+                  <blockquote className="mt-4 flex-1 font-heading text-lg leading-8 text-plum-900">
+                    "{quote}"
+                  </blockquote>
+                  <figcaption className="mt-6 flex items-center gap-3 border-t border-plum-100 pt-5">
+                    <span className="grid size-9 place-items-center rounded-full bg-plum-800 text-[0.6rem] font-bold text-white">
+                      {initials}
+                    </span>
+                    <span className="text-sm font-semibold text-plum-800">
+                      {name}
+                    </span>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section className="mx-auto max-w-6xl px-6 py-20 lg:py-28">
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-plum-950 via-plum-900 to-coral-700 px-8 py-16 text-center shadow-2xl shadow-plum-900/20 sm:px-16">
             <div
               aria-hidden="true"
-              className="absolute -top-24 -right-16 size-64 rounded-full bg-white/10 blur-2xl"
+              className="absolute -right-20 -top-24 size-72 rounded-full bg-mint-300/15 blur-2xl"
             />
             <div
               aria-hidden="true"
-              className="absolute -bottom-24 -left-16 size-64 rounded-full bg-pepper-400/20 blur-2xl"
+              className="absolute -bottom-24 -left-20 size-72 rounded-full bg-cream-200/10 blur-2xl"
             />
-            <h2 className="relative text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Hungry yet?
+            <h2 className="relative mx-auto max-w-2xl font-heading text-3xl font-bold leading-tight text-cream-100 sm:text-4xl lg:text-5xl">
+              Your next great meal is one click away.
             </h2>
-            <p className="relative mx-auto mt-3 max-w-md text-sm leading-6 text-brand-50/90">
-              Order in minutes. Eat well today.
+            <p className="relative mt-4 text-sm text-plum-200">
+              Order now. We handle the rest.
             </p>
             <Link
               href="/login"
-              className="relative mt-8 inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-brand-700 shadow-lg transition hover:bg-brand-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              className="group relative mt-9 inline-flex items-center gap-2 rounded-full bg-cream-200 px-7 py-3.5 text-sm font-bold text-plum-900 shadow-lg transition hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cream-200"
             >
-              Sign in to order
-              <ArrowRightIcon className="size-4" />
+              Order a box
+              <ArrowIcon className="size-4 transition-transform group-hover:translate-x-0.5" />
             </Link>
           </div>
         </section>
       </main>
 
-      {/* ---------- Footer ---------- */}
-      <footer className="border-t border-zinc-100">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 py-8 sm:flex-row">
-          <Logo />
-          <p className="text-xs text-zinc-500">
-            © 2026 DBGFoodBoxNG. Lagos, Nigeria.
-          </p>
+      {/* Footer */}
+      <footer className="bg-plum-950 text-cream-100">
+        <div className="mx-auto max-w-6xl px-6 py-14">
+          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="lg:col-span-2">
+              <Logo light />
+              <p className="mt-5 max-w-xs text-sm leading-6 text-plum-300">
+                Fresh Nigerian meal boxes, cooked to order and delivered across
+                Lagos.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-cream-200">
+                Explore
+              </h3>
+              <ul className="mt-5 space-y-3 text-sm text-plum-300">
+                <li>
+                  <a href="#how-it-works" className="transition hover:text-white">
+                    How it works
+                  </a>
+                </li>
+                <li>
+                  <a href="#menu" className="transition hover:text-white">
+                    Menu
+                  </a>
+                </li>
+                <li>
+                  <a href="#reviews" className="transition hover:text-white">
+                    Reviews
+                  </a>
+                </li>
+                <li>
+                  <Link href="/login" className="transition hover:text-white">
+                    Sign in
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-cream-200">
+                Get in touch
+              </h3>
+              <ul className="mt-5 space-y-3 text-sm text-plum-300">
+                <li>Lagos, Nigeria</li>
+                <li>hello@dbgfoodboxng.com</li>
+                <li>Daily, 9am to 9pm</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-plum-300 sm:flex-row sm:items-center sm:justify-between">
+            <p>© 2026 DBGFoodBoxNG. All rights reserved.</p>
+            <p>Made with care in Lagos.</p>
+          </div>
         </div>
       </footer>
     </div>

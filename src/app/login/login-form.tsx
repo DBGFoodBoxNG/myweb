@@ -205,9 +205,9 @@ export default function LoginForm() {
   }
 
   const inputBase =
-    "peer w-full rounded-xl border bg-white py-3 pl-11 pr-4 text-sm text-zinc-900 shadow-sm outline-none transition placeholder:text-zinc-400 focus:ring-4 dark:bg-white/5 dark:text-zinc-50 dark:placeholder:text-zinc-500";
+    "peer w-full rounded-xl border bg-white py-3 pl-11 pr-4 text-sm text-plum-900 shadow-sm outline-none transition placeholder:text-plum-600 focus:ring-4 dark:bg-white/5 dark:text-zinc-50 dark:placeholder:text-zinc-500";
   const inputOk =
-    "border-zinc-200 focus:border-brand-500 focus:ring-brand-500/20 dark:border-zinc-700 dark:focus:border-brand-400 dark:focus:ring-brand-400/20";
+    "border-plum-200 focus:border-coral-500 focus:ring-coral-500/20 dark:border-zinc-700 dark:focus:border-coral-400 dark:focus:ring-coral-400/20";
   const inputBad =
     "border-red-400 focus:border-red-500 focus:ring-red-500/20 dark:border-red-500";
 
@@ -218,10 +218,10 @@ export default function LoginForm() {
         <Logo />
       </div>
 
-      <h1 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
-        Welcome back 👋
+      <h1 className="font-heading text-4xl font-bold tracking-tight text-plum-900 dark:text-cream-100">
+        Welcome back
       </h1>
-      <p className="mt-2 text-sm leading-6 text-zinc-500 dark:text-zinc-400">
+      <p className="mt-3 text-sm leading-6 text-plum-600 dark:text-plum-200">
         Sign in to your account to keep the flavors coming, hot, fresh, and
         right on time.
       </p>
@@ -229,9 +229,9 @@ export default function LoginForm() {
       {status === "success" && (
         <div
           role="status"
-          className="mt-6 flex items-start gap-3 rounded-xl border border-brand-200 bg-brand-50 p-4 text-sm text-brand-800 dark:border-brand-800/60 dark:bg-brand-950/60 dark:text-brand-200"
+          className="mt-6 flex items-start gap-3 rounded-xl border border-coral-200 bg-coral-50 p-4 text-sm text-plum-800 dark:border-coral-800/60 dark:bg-coral-950/60 dark:text-coral-200"
         >
-          <CheckIcon className="mt-0.5 size-4 shrink-0 text-brand-600 dark:text-brand-400" />
+          <CheckIcon className="mt-0.5 size-4 shrink-0 text-coral-700 dark:text-coral-400" />
           <span>
             Login successful! Redirecting you to your dashboard…
           </span>
@@ -266,7 +266,7 @@ export default function LoginForm() {
         <div>
           <label
             htmlFor="email"
-            className="mb-1.5 block text-sm font-medium text-zinc-700 dark:text-zinc-300"
+            className="mb-1.5 block text-sm font-medium text-plum-800 dark:text-cream-100"
           >
             Email address
           </label>
@@ -283,7 +283,7 @@ export default function LoginForm() {
               aria-describedby={errors.email ? "email-error" : undefined}
               className={`${inputBase} peer ${errors.email ? inputBad : inputOk}`}
             />
-            <MailIcon className="pointer-events-none absolute left-3.5 top-1/2 size-4.5 -translate-y-1/2 text-zinc-400 peer-focus:text-brand-500" />
+            <MailIcon className="pointer-events-none absolute left-3.5 top-1/2 size-4.5 -translate-y-1/2 text-plum-500 peer-focus:text-coral-500" />
           </div>
           {errors.email && (
             <p
@@ -299,7 +299,7 @@ export default function LoginForm() {
         <div>
           <label
             htmlFor="password"
-            className="mb-1.5 block text-sm font-medium text-zinc-700 dark:text-zinc-300"
+            className="mb-1.5 block text-sm font-medium text-plum-800 dark:text-cream-100"
           >
             Password
           </label>
@@ -318,12 +318,12 @@ export default function LoginForm() {
                 errors.password ? inputBad : inputOk
               }`}
             />
-            <LockIcon className="pointer-events-none absolute left-3.5 top-1/2 size-4.5 -translate-y-1/2 text-zinc-400 peer-focus:text-brand-500" />
+            <LockIcon className="pointer-events-none absolute left-3.5 top-1/2 size-4.5 -translate-y-1/2 text-plum-500 peer-focus:text-coral-500" />
             <button
               type="button"
               onClick={() => setShowPassword((v) => !v)}
               aria-label={showPassword ? "Hide password" : "Show password"}
-              className="absolute right-3 top-1/2 -translate-y-1/2 rounded-lg p-1 text-zinc-400 transition hover:text-zinc-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500 dark:hover:text-zinc-300"
+              className="absolute right-3 top-1/2 -translate-y-1/2 rounded-lg p-1 text-plum-500 transition hover:text-plum-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-coral-500 dark:hover:text-zinc-300"
             >
               {showPassword ? (
                 <EyeOffIcon className="size-4.5" />
@@ -344,21 +344,21 @@ export default function LoginForm() {
 
         {/* Remember + forgot */}
         <div className="flex items-center justify-between gap-4">
-          <label className="flex cursor-pointer select-none items-center gap-2.5 text-sm text-zinc-600 dark:text-zinc-400">
+          <label className="flex cursor-pointer select-none items-center gap-2.5 text-sm text-plum-700 dark:text-cream-100">
             <input
               type="checkbox"
               className="peer sr-only"
               checked={remember}
               onChange={(e) => setRemember(e.target.checked)}
             />
-            <span className="grid size-5 place-items-center rounded-md border border-zinc-300 bg-white transition peer-checked:border-brand-600 peer-checked:bg-brand-600 peer-checked:[&>svg]:scale-100 peer-checked:[&>svg]:opacity-100 peer-focus-visible:ring-4 peer-focus-visible:ring-brand-500/25 dark:border-zinc-600 dark:bg-white/5">
+            <span className="grid size-5 place-items-center rounded-md border border-plum-300 bg-white transition peer-checked:border-coral-600 peer-checked:bg-coral-600 peer-checked:[&>svg]:scale-100 peer-checked:[&>svg]:opacity-100 peer-focus-visible:ring-4 peer-focus-visible:ring-coral-500/25 dark:border-zinc-600 dark:bg-white/5">
               <CheckIcon className="size-3 scale-50 text-white opacity-0 transition-transform duration-150 [&_path]:stroke-[3]" />
             </span>
             Keep me signed in
           </label>
           <a
             href="#"
-            className="text-sm font-semibold text-brand-600 transition hover:text-brand-700 hover:underline dark:text-brand-400 dark:hover:text-brand-300"
+            className="text-sm font-semibold text-coral-700 transition hover:text-coral-700 hover:underline dark:text-coral-400 dark:hover:text-coral-300"
           >
             Forgot password?
           </a>
@@ -368,7 +368,7 @@ export default function LoginForm() {
         <button
           type="submit"
           disabled={status === "loading"}
-          className="group relative flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-600 to-brand-500 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-brand-600/25 transition hover:from-brand-700 hover:to-brand-600 hover:shadow-brand-600/35 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600 disabled:cursor-not-allowed disabled:opacity-70"
+          className="group relative flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-plum-900 to-coral-700 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-coral-600/25 transition hover:from-plum-950 hover:to-coral-800 hover:shadow-coral-600/35 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-coral-600 disabled:cursor-not-allowed disabled:opacity-70"
         >
           {status === "loading" ? (
             <>
@@ -396,25 +396,25 @@ export default function LoginForm() {
 
         {/* Divider */}
         <div className="flex items-center gap-4">
-          <span className="h-px flex-1 bg-zinc-200 dark:bg-zinc-700" />
-          <span className="text-xs font-medium uppercase tracking-wider text-zinc-400 dark:text-zinc-500">
+          <span className="h-px flex-1 bg-plum-200 dark:bg-zinc-700" />
+          <span className="text-xs font-medium uppercase tracking-wider text-plum-500 dark:text-zinc-500">
             or continue with
           </span>
-          <span className="h-px flex-1 bg-zinc-200 dark:bg-zinc-700" />
+          <span className="h-px flex-1 bg-plum-200 dark:bg-zinc-700" />
         </div>
 
         {/* Social buttons */}
         <div className="grid grid-cols-2 gap-3">
           <button
             type="button"
-            className="flex items-center justify-center gap-2.5 rounded-xl border border-zinc-200 bg-white px-4 py-2.5 text-sm font-medium text-zinc-700 shadow-sm transition hover:bg-zinc-50 hover:shadow focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600 dark:border-zinc-700 dark:bg-white/5 dark:text-zinc-200 dark:hover:bg-white/10"
+            className="flex items-center justify-center gap-2.5 rounded-xl border border-plum-200 bg-white px-4 py-2.5 text-sm font-medium text-plum-800 shadow-sm transition hover:bg-cream-50 hover:shadow focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-coral-600 dark:border-zinc-700 dark:bg-white/5 dark:text-zinc-200 dark:hover:bg-white/10"
           >
             <GoogleIcon className="size-4.5" />
             Google
           </button>
           <button
             type="button"
-            className="flex items-center justify-center gap-2.5 rounded-xl border border-zinc-200 bg-white px-4 py-2.5 text-sm font-medium text-zinc-700 shadow-sm transition hover:bg-zinc-50 hover:shadow focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600 dark:border-zinc-700 dark:bg-white/5 dark:text-zinc-200 dark:hover:bg-white/10"
+            className="flex items-center justify-center gap-2.5 rounded-xl border border-plum-200 bg-white px-4 py-2.5 text-sm font-medium text-plum-800 shadow-sm transition hover:bg-cream-50 hover:shadow focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-coral-600 dark:border-zinc-700 dark:bg-white/5 dark:text-zinc-200 dark:hover:bg-white/10"
           >
             <FacebookIcon className="size-4.5 text-[#1877F2]" />
             Facebook
@@ -422,11 +422,11 @@ export default function LoginForm() {
         </div>
       </form>
 
-      <p className="mt-10 text-center text-sm text-zinc-500 dark:text-zinc-400">
+      <p className="mt-10 text-center text-sm text-plum-600 dark:text-plum-200">
         New to DBGFoodBoxNG?{" "}
         <a
           href="#"
-          className="font-semibold text-brand-600 transition hover:text-brand-700 hover:underline dark:text-brand-400 dark:hover:text-brand-300"
+          className="font-semibold text-coral-700 transition hover:text-coral-700 hover:underline dark:text-coral-400 dark:hover:text-coral-300"
         >
           Create an account
         </a>

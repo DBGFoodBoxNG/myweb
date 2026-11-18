@@ -1,42 +1,58 @@
 @import "tailwindcss";
 
-/* Class-based dark mode: the site stays white unless .dark is set on <html> */
+/* Class-based dark mode: the site stays light unless .dark is set on <html> */
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #4c2a2c;
   color-scheme: light;
 }
 
 .dark {
-  --background: #0a0a0a;
-  --foreground: #ededed;
+  --background: #2d151c;
+  --foreground: #fff1da;
   color-scheme: dark;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-body);
+  --font-heading: var(--font-display);
 
-  /* DBGFoodBoxNG brand palette */
-  --color-brand-50: #ecfdf5;
-  --color-brand-100: #d1fae5;
-  --color-brand-200: #a7f3d0;
-  --color-brand-300: #6ee7b7;
-  --color-brand-400: #34d399;
-  --color-brand-500: #10b981;
-  --color-brand-600: #059669;
-  --color-brand-700: #047857;
-  --color-brand-800: #065f46;
-  --color-brand-900: #064e3b;
-  --color-brand-950: #022c22;
+  /* DBGFoodBoxNG palette inspired by warm Lagos celebration styling */
+  --color-plum-50: #fbf6f5;
+  --color-plum-100: #f6ebe9;
+  --color-plum-200: #ead6d3;
+  --color-plum-300: #d6b3af;
+  --color-plum-400: #b78d89;
+  --color-plum-500: #956c69;
+  --color-plum-600: #775352;
+  --color-plum-700: #604143;
+  --color-plum-800: #4c2a2c;
+  --color-plum-900: #442427;
+  --color-plum-950: #2d151c;
 
-  --color-pepper-400: #fbbf24;
-  --color-pepper-500: #f59e0b;
-  --color-pepper-600: #d97706;
+  --color-coral-50: #fff5f1;
+  --color-coral-100: #ffe6dc;
+  --color-coral-200: #ffc8b4;
+  --color-coral-300: #ffa17e;
+  --color-coral-400: #f9784e;
+  --color-coral-500: #ef552b;
+  --color-coral-600: #e04a2d;
+  --color-coral-700: #c0391f;
+  --color-coral-800: #9b2f1c;
+  --color-coral-900: #7b2a1c;
+  --color-coral-950: #5a1a12;
+
+  --color-cream-50: #fffaf3;
+  --color-cream-100: #fff1da;
+  --color-cream-200: #ffd89e;
+  --color-cream-300: #f5ece4;
+
+  --color-mint-100: #d8f4f0;
+  --color-mint-300: #96e4dd;
 
   --animate-fade-up: fade-up 0.6s ease-out both;
   --animate-fade-in: fade-in 0.8s ease-out both;
@@ -46,7 +62,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), Arial, Helvetica, sans-serif;
 }
 
 @keyframes fade-up {
